@@ -2,13 +2,26 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 const Item = ({ item }) => {
+  const getRandomColor = () => {
+    return (
+      "rgb(" +
+      Math.floor(Math.random() * 256) +
+      "," +
+      Math.floor(Math.random() * 256) +
+      "," +
+      Math.floor(Math.random() * 256) +
+      ")"
+    );
+  };
   return (
     <View style={styles.itemContainer}>
-      <View style={styles.profileImage}></View>
+      <View
+        style={[styles.profileImage, { backgroundColor: getRandomColor() }]}
+      ></View>
       <View style={styles.box}>
         <Text style={styles.name}>{item?.address.city}</Text>
         <Text style={[styles.name, { fontSize: 14, color: "#96A7AF" }]}>
-          {item?.company.catchPhrase}
+          {item?.phone}
         </Text>
       </View>
     </View>
