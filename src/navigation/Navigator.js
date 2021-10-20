@@ -35,7 +35,7 @@ function Navigator() {
           component={Welcome}
         />
         <Stack.Screen
-          // options={{ ...headerConfig, title: "Ana Sayfa" }}
+          options={{ ...headerConfig, title: "Ana Sayfa" }}
           name="Home"
           component={Home}
         />
