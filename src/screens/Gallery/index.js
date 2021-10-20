@@ -81,17 +81,6 @@ const Gallery = () => {
               bottom: 0,
             }}
           />
-
-          {/* <Card
-            image={)}
-            backgroundColor="#22343C"
-            height={210}
-            style={{ marginLeft: 19 }}
-            imageStyle={{
-              position: "absolute",
-              top: 0,
-            }}
-          /> */}
           <View style={[styles.card2, { marginLeft: 19 }]}>
             <Image source={require("../../assets/images/Mask.png")} />
             <TouchableOpacity
