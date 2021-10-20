@@ -15,7 +15,7 @@ const Button = ({ backgroundColor, label, onPress  }) => {
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    height: 65,
+    height: 55,
     borderRadius: 15,
     alignItems: "center",
     justifyContent: "center",
