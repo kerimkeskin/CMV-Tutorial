@@ -6,6 +6,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Welcome from "../screens/Welcome";
 import Home from "../screens/Home";
+import Gallery from "../screens/Gallery";
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,11 @@ function Navigator() {
           options={{ ...headerConfig, title: "Ana Sayfa" }}
           name="Home"
           component={Home}
+        />
+        <Stack.Screen
+          options={{ ...headerConfig, title: "Galeri" }}
+          name="Gallery"
+          component={Gallery}
         />
       </Stack.Navigator>
     </NavigationContainer>
