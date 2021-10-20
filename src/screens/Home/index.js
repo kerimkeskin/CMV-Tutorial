@@ -26,7 +26,7 @@ const Home = ({ navigation }) => {
       <View style={{ width: "75%", alignSelf: "center" }}>
         <Button
           label="Galeri"
-          backgroundColor="purple"
+          backgroundColor="#40DF9F"
           onPress={() => navigation.navigate("Gallery")}
         />
       </View>

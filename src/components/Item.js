@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     width: 80,
     height: 80,
     borderRadius: 999,
-    backgroundColor: "green",
+    backgroundColor: "red",
   },
   itemContainer: {
     alignSelf: "center",
