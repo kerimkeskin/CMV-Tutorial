@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -9,9 +9,11 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-
+import * as Animatable from "react-native-animatable";
 const Welcome = ({ navigation }) => {
-  const TextInputBox = ({ icon }) => {
+  const [text, setText] = useState("");
+
+  const TextInputBox = ({ icon, onChangeText, value }) => {
     return (
       <View style={styles.usernameWrapper}>
         <View style={styles.icon}>
@@ -19,8 +21,8 @@ const Welcome = ({ navigation }) => {
         </View>
         <TextInput
           style={styles.input}
-          // onChangeText={onChangeText}
-          // value={text}
+          onChangeText={onChangeText}
+          value={value}
         />
       </View>
     );
@@ -28,27 +30,36 @@ const Welcome = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.box}>
-        <View style={styles.headerBox}></View>
+        <Animatable.View animation="fadeInDown">
+          <View style={styles.headerBox}></View>
 
-        <View style={styles.title}>
-          <Text style={styles.titleText}>Welcome!</Text>
-          <Text style={styles.subTitleText}>Sign in to continue</Text>
-        </View>
-        <TextInputBox icon={require("../../assets/images/Icon.png")} />
-        <TextInputBox icon={require("../../assets/images/pass.png")} />
-
-        <TouchableOpacity
-          onPress={() => navigation.navigate("Home")}
-          style={styles.buttonWrapper}
-        >
-          <Text style={styles.signinText}>Sign in</Text>
-          <AntDesign
-            style={{ marginLeft: 5 }}
-            name="arrowright"
-            size={20}
-            color="#fff"
+          <View style={styles.title}>
+            <Text style={styles.titleText}>Welcome!</Text>
+            <Text style={styles.subTitleText}>Sign in to continue</Text>
+          </View>
+        </Animatable.View>
+        <Animatable.View animation="fadeInRight">
+          <TextInputBox
+            onChangeText={(text) => setText(text)}
+            value={text}
+            icon={require("../../assets/images/Icon.png")}
           />
-        </TouchableOpacity>
+          <TextInputBox icon={require("../../assets/images/pass.png")} />
+        </Animatable.View>
+        <Animatable.View animation="fadeInLeft">
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Home")}
+            style={styles.buttonWrapper}
+          >
+            <Text style={styles.signinText}>Sign in</Text>
+            <AntDesign
+              style={{ marginLeft: 5 }}
+              name="arrowright"
+              size={20}
+              color="#fff"
+            />
+          </TouchableOpacity>
+        </Animatable.View>
       </View>
     </SafeAreaView>
   );
