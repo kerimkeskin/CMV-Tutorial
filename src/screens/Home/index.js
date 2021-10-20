@@ -23,9 +23,9 @@ const Home = ({ navigation }) => {
   }, []);
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{ width: "75%", alignSelf: "center" }}>
+      <View style={{ width: "75%", alignSelf: "center" ,marginTop:10}}>
         <Button
-          label="Galeri"
+          label="Galeriye Git"
           backgroundColor="#40DF9F"
           onPress={() => navigation.navigate("Gallery")}
         />
